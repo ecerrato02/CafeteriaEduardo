@@ -3,41 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
-    app:startDestination="@id/menjars">
+    app:startDestination="@id/menjars"
+    >
 
     <fragment
         android:id="@+id/menjars"
         android:name="com.example.cafeteria.Menjars"
         android:label="fragment_menjars"
-        tools:layout="@layout/fragment_menjars" >
-        <action
-            android:id="@+id/action_menjars_to_begudes"
-            app:destination="@id/begudes"
-            app:popUpTo="@id/menjars" />
-    </fragment>
+        tools:layout="@layout/fragment_menjars" />
     <fragment
         android:id="@+id/begudes"
         android:name="com.example.cafeteria.Begudes"
         android:label="fragment_begudes"
-        tools:layout="@layout/fragment_begudes" >
-        <action
-            android:id="@+id/action_begudes_to_postres"
-            app:destination="@id/postres"
-            app:popUpTo="@id/begudes" />
-    </fragment>
+        tools:layout="@layout/fragment_begudes" />
     <fragment
         android:id="@+id/postres"
         android:name="com.example.cafeteria.Postres"
         android:label="fragment_postres"
-        tools:layout="@layout/fragment_postres" >
-        <action
-            android:id="@+id/action_postres_to_pagament"
-            app:destination="@id/pagament"
-            app:popUpTo="@id/postres" />
-    </fragment>
+        tools:layout="@layout/fragment_postres" />
     <fragment
         android:id="@+id/pagament"
         android:name="com.example.cafeteria.Pagament"
         android:label="fragment_pagament"
-        tools:layout="@layout/fragment_pagament" />
+        tools:layout="@layout/fragment_pagament" >
+        <action
+            android:id="@+id/action_pagament_to_menjars"
+            app:destination="@id/menjars"
+            app:popUpTo="@id/menjars" />
+    </fragment>
 </navigation>

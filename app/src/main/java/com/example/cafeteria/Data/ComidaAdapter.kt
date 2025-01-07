@@ -4,18 +4,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cafeteria.R
 
-class ComidaAdapter (private val mList: List<Comida>) : RecyclerView.Adapter<ComidaAdapter.ViewHolder>() {
+class ComidaAdapter (private val mList: List<ComidaModel>, private val menuViewModel: ComidaViewModel) : RecyclerView.Adapter<ComidaAdapter.ViewHolder>() {
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // inflates the card_view_design view
         // that is used to hold list item
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.menjars_recycler, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.menjars_recycler, parent, false)
 
         return ViewHolder(view)
     }
@@ -25,10 +25,17 @@ class ComidaAdapter (private val mList: List<Comida>) : RecyclerView.Adapter<Com
 
         val comida = mList[position]
 
-        holder.comidaImage.setImageResource(R.drawable.bocadillo)
+        when(comida.type){
+            1 -> holder.comidaImage.setImageResource(R.drawable.bocadillo)
+            2 -> holder.comidaImage.setImageResource(R.drawable.bebida)
+            3 -> holder.comidaImage.setImageResource(R.drawable.postre)
+        }
         holder.comidaNombre.text = comida.nombre
-        holder.comidaPrecio.text = comida.precio.toString()
+        holder.comidaPrecio.text = comida.precio.toString() + "€"
 
+        holder.layoutComida.setOnClickListener{
+             menuViewModel.anadirProducto(comida.id)
+        }
     }
 
     // return the number of the items in the list
@@ -40,5 +47,6 @@ class ComidaAdapter (private val mList: List<Comida>) : RecyclerView.Adapter<Com
         val comidaImage: ImageView = itemView.findViewById(R.id.imageviewMenjars)
         val comidaNombre: TextView = itemView.findViewById(R.id.textViewNomMenjar)
         val comidaPrecio: TextView = itemView.findViewById(R.id.textViewPreuMenjar)
+        val layoutComida : LinearLayout = itemView.findViewById(R.id.layoutComida)
     }
 }
