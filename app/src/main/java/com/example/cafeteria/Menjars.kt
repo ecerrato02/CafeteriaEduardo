@@ -9,14 +9,11 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.cafeteria.Data.ComidaAdapter
-import com.example.cafeteria.Data.ComidaProvider
 import com.example.cafeteria.Data.ComidaViewModel
 import com.example.cafeteria.Data.MenjarViewModel
 import com.example.cafeteria.databinding.FragmentMenjarsBinding
 
-
 class Menjars : Fragment() {
-
 
     private val viewModel: MenjarViewModel by viewModels()
     private val menuViewModel: ComidaViewModel by activityViewModels<ComidaViewModel>()

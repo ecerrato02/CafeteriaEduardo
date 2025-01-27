@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.cafeteria.Data.ComidaAdapter
 import com.example.cafeteria.Data.ComidaModel
 import com.example.cafeteria.Data.ComidaViewModel
 import com.example.cafeteria.Data.MenjarViewModel
@@ -29,7 +28,6 @@ class Pagament : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentPagamentBinding.inflate(inflater)
-
 
         menuViewModel.menu.observe(viewLifecycleOwner){
             updateRecycler()
