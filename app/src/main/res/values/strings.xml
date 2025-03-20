@@ -3,6 +3,7 @@
     <string name="Menjar">Menjar</string>
     <string name="Bebida">Bebida</string>
     <string name="Postre">Postre</string>
+    <string name="Aperitius">Aperitius</string>
     <string name="Total">Total</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

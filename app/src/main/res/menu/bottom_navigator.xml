@@ -12,6 +12,10 @@
             android:icon="@drawable/postre"
             android:title="@string/Postre"/>
 
+        <item android:id="@+id/aperitius"
+            android:icon="@drawable/pagos"
+            android:title="@string/Total"/>
+
         <item android:id="@+id/pagament"
             android:icon="@drawable/pagos"
             android:title="@string/Total"/>

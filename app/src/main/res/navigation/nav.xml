@@ -31,4 +31,9 @@
             app:destination="@id/menjars"
             app:popUpTo="@id/menjars" />
     </fragment>
+    <fragment
+        android:id="@+id/aperitius"
+        android:name="com.example.cafeteria.Aperitius"
+        android:label="fragment_aperitius"
+        tools:layout="@layout/fragment_aperitius" />
 </navigation>

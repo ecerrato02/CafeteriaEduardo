@@ -29,12 +29,14 @@ class ComidaAdapter (private val mList: List<ComidaModel>, private val menuViewM
             1 -> holder.comidaImage.setImageResource(R.drawable.bocadillo)
             2 -> holder.comidaImage.setImageResource(R.drawable.bebida)
             3 -> holder.comidaImage.setImageResource(R.drawable.postre)
+            4 -> holder.comidaImage.setImageResource(R.drawable.bebida)
         }
         holder.comidaNombre.text = comida.nombre
         holder.comidaPrecio.text = comida.precio.toString() + "€"
 
         holder.layoutComida.setOnClickListener{
              menuViewModel.anadirProducto(comida.id)
+            menuViewModel.contarProductos()
         }
     }
 

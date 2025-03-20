@@ -29,6 +29,7 @@ class TotalAdapter(private val mList: List<ComidaModel>, private val menuViewMod
             1 -> holder.ImageViewComida.setImageResource(R.drawable.bocadillo)
             2 -> holder.ImageViewComida.setImageResource(R.drawable.bebida)
             3 -> holder.ImageViewComida.setImageResource(R.drawable.postre)
+            4 -> holder.ImageViewComida.setImageResource(R.drawable.bebida)
         }
         // sets the image to the imageview from our itemHolder class
         holder.textViewNom.text = comida.nombre

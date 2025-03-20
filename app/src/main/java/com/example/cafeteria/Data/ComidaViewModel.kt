@@ -18,6 +18,10 @@ class ComidaViewModel : ViewModel(){
         _menu.value = list
     }
 
+    fun contarProductos() : Int{
+        return _menu.value!!.size
+    }
+
     fun getTotal(): Double {
         val total = _menu.value?.map{ it.precio }?.sum()
         val decimales = DecimalFormat("#.##")
@@ -27,6 +31,7 @@ class ComidaViewModel : ViewModel(){
         }
         return decimales.format(total).toDouble()
     }
+
     fun limpiar(){
         val list = mutableListOf<ComidaModel>()
         _menu.value = list

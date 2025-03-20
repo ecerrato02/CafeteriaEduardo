@@ -21,12 +21,12 @@ class Top : Fragment() {
         binding = FragmentTopBinding.inflate(inflater)
         menuViewModel.menu.observe(viewLifecycleOwner) {
             binding.total.text = "Total: " + menuViewModel.getTotal().toString() + "€"
+            binding.contador.text = "Pedidos: " + menuViewModel.contarProductos()
         }
         return binding.root
     }
 
     companion object {
-
 
     }
 }
